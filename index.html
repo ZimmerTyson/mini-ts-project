@@ -14,6 +14,13 @@
   <form class="surpriseQuestions">
     <label for="fristName">Enter Your First Name:</label>
     <input type="text" id="firstName" name="firstName" placeholder="Frist Name">
+
+    <label for="lastName"> Enter Your Last Name</label>
+    <input type="text" id="lastName" placeholder="Last Name">
+
+    <label for="likesDogs">Do you like dogs?</label>
+    <input type="checkbox" id="likesDogs">
+   
     <label for="favoriteColor">Choose your favorite color:</label>
     
     <select id="favoriteColor" name="favoriteColor">
@@ -23,8 +30,12 @@
       <option value="yellow">Yellow</option>
     </select>
 
-    <button id="submitButton">Let's see what you get!</button>
+    <button class="submitButton">Let's see what you get!</button>
   </form>
+  <div id="supriseMessage">
+
+  </div>
   
+  <script type="module" src="dist/index.js"></script>
 </body>
 </html>
