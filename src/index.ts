@@ -45,13 +45,11 @@ submitBtn.addEventListener('click',  (event: MouseEvent) => {
     return alert('please enter your name!');
   }
 
-  if(formData.likesDogs && validForm) {
-    console.log('they like dogs')
-    supriseMessage.innerHTML =  likesDogsMessage(formData);
+  if(formData.likesDogs) {
+    displayMessage(likesDogsMessage(formData));
 
   } else {
-    supriseMessage.innerHTML = hatesDogsMessage(formData) ;
-    console.log('they do not like dogs');
+    displayMessage(hatesDogsMessage(formData));
   }
 });
 
@@ -67,14 +65,22 @@ function likesDogsMessage(data: ContactFormData):string {
 function hatesDogsMessage(data: ContactFormData): string  {
   return `
       <h2 class="surpriseHeading red"> Sorry to hear you hate dogs!</h2>
-      <p>I hope you rethink your desision! :-( </p>
+      <p>I hope you rethink your decision! :-( </p>
     `;
 }
 
+
+//function to validate if the name fields have been filled in
 function isFormValid(data: ContactFormData): boolean {
   return data.firstName.length > 0 && data.lastName.length > 0;
 }
 
+
+//functions to inject message into the page
+
+function displayMessage(message: string): void {
+  supriseMessage.innerHTML = message
+}
 
 // if they did check the box, lets display a message saying they are awesome with their name and something fun about dogs
 
