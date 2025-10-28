@@ -78,7 +78,7 @@ function hatesDogsMessage(data: ContactFormData): string  {
 
 //function to validate if the name fields have been filled in
 function isFormValid(data: ContactFormData): boolean {
-  return data.firstName.length > 0;
+  return data.firstName.length > 0 && (data.lastName?.length ?? 0) > 0;
 }
 
 
