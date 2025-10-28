@@ -21,7 +21,7 @@ type ContactMethods = 'email' | 'phone' | 'text';
 
 interface ContactFormData {
   firstName: string,
-  lastName: string,
+  lastName?: string,
   likesDogs: boolean,
   favoriteColor: string,
   contactMethod: ContactMethods
@@ -34,7 +34,7 @@ function getFormData(): ContactFormData {
   lastName: lastName.value,
   likesDogs: likesDogs.checked,
   favoriteColor: favoriteColor.value,
-  contactMethod: contactMethodSelector.value
+  contactMethod: contactMethodSelector.value as ContactMethods,
   }
 }
 
@@ -78,7 +78,7 @@ function hatesDogsMessage(data: ContactFormData): string  {
 
 //function to validate if the name fields have been filled in
 function isFormValid(data: ContactFormData): boolean {
-  return data.firstName.length > 0 && data.lastName.length > 0;
+  return data.firstName.length > 0;
 }
 
 
